@@ -17,4 +17,3 @@ def get_token(request):
         user_id = tokens.get('user_id')
         user, friends = get_info(access_token, user_id)
         return render(request, 'webim_test.html', {'user': user, 'friends': friends})
-        #return HttpResponse(user, friends)
