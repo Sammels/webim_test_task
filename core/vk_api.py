@@ -1,4 +1,3 @@
-# import vk
 import json
 
 import requests
@@ -27,7 +26,7 @@ def get_friends(access_token):
     url = 'https://api.vk.com/method/friends.getOnline'
     params = {'v': '5.52', 'access_token': access_token}
     friends_info = requests.get(url, params)
-    friends = json.loads(friends_info.text).get('response')[5:]
+    friends = json.loads(friends_info.text).get('response')[:5]
     reworked_friends = []
     for friend in friends:
         url = 'https://api.vk.com/method/users.get?user_id=210700286&v=5.52'
