@@ -24,7 +24,6 @@ def get_access_token(code):
 
 
 def get_friends(access_token):
-    'https://api.vk.com/method/friends.getOnline?v=5.52&access_token='
     url = 'https://api.vk.com/method/friends.getOnline'
     params = {'v': '5.52', 'access_token': access_token}
     friends_info = requests.get(url, params)
@@ -37,6 +36,7 @@ def get_friends(access_token):
         reworked_friends.append('%s %s' % (json.loads(response.text).get('response')[0].get('first_name'),
                                 json.loads(response.text).get('response')[0].get('last_name')))
     return reworked_friends
+
 
 def get_info(access_token, user_id):
     url = 'https://api.vk.com/method/users.get?user_id=210700286&v=5.52'

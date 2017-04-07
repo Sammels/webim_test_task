@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Webim_test_task</title>
+    <title>Webim test task</title>
+    <h1>User name</h1>
+    {{ user }}
+    <h1>5 friends:</h1>
+    {% for friend in friends %}
+        <p>{{ friend }}</p>
+    {% endfor %}
 </head>
 <body>
 
