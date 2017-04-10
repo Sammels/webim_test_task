@@ -20,8 +20,8 @@ from core import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.btn),
+    url(r'^$', views.get_access_token),
     #url(r'^btn/', views.btn),
     url(r'^auth/', views.auth),
-    url(r'^get_token/', views.get_token)
+    #url(r'^get_token/', views.get_token)
 ]

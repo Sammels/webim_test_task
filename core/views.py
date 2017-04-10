@@ -6,8 +6,8 @@ import requests
 from core.vk_api import vk_auth, get_access_token, get_info
 
 
-def btn(request):
-    return render(request, 'webim_auth.html')
+#def btn(request):
+    #return render(request, 'webim_auth.html')
 
 
 def auth(request):
@@ -22,3 +22,5 @@ def get_token(request):
         user_id = tokens.get('user_id')
         user, friends = get_info(access_token, user_id)
         return render(request, 'webim_test.html', {'user': user, 'friends': friends})
+    else:
+        return render(request, 'webim_auth.html')
