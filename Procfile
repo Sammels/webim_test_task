@@ -1,0 +1,1 @@
+web: gunicorn webim_test_task.wsgi --log-file -
