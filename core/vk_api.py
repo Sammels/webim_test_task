@@ -7,7 +7,7 @@ from webim_test_task.settings import VK_API_KEY, VK_SECRET_KEY
 
 def vk_auth():
     url = 'https://oauth.vk.com/authorize'
-    params = {'client_id': VK_API_KEY, 'display': 'page', 'redirect_uri': 'http://127.0.0.1:8000/get_token',
+    params = {'client_id': VK_API_KEY, 'display': 'page', 'redirect_uri': 'https://secret-spire-94117.herokuapp.com/get_token',
               'scope': 'friends', 'response_type': 'code', 'v': '5.63'}
     auth = requests.get(url=url, params=params)
     return auth.url
@@ -16,7 +16,7 @@ def vk_auth():
 def get_access_token(code):
     url = 'https://oauth.vk.com/access_token'
     params = {'client_id': VK_API_KEY, 'client_secret': VK_SECRET_KEY,
-              'redirect_uri': 'http://127.0.0.1:8000/get_token',
+              'redirect_uri': 'https://secret-spire-94117.herokuapp.com/get_token',
               'code': code}
     auth = requests.get(url=url, params=params)
     return json.loads(auth.text)
