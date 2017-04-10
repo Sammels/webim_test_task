@@ -19,9 +19,9 @@ from django.contrib import admin
 from core import views
 
 urlpatterns = [
-    #url(r'^', views.auth),
     url(r'^admin/', admin.site.urls),
-    url(r'^btn/', views.btn),
+    url(r'^$', views.btn),
+    #url(r'^btn/', views.btn),
     url(r'^auth/', views.auth),
     url(r'^get_token/', views.get_token)
 ]
